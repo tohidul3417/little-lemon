@@ -1,7 +1,7 @@
 import { Check, Calendar, Clock, Users } from "lucide-react";
 
 
-export function SuccessToast ({ data }) {
+function SuccessToast ({ data }) {
     return (
         <div className="toast-content">
           <div className="toast-header">
@@ -34,3 +34,5 @@ export function SuccessToast ({ data }) {
         </div>
       );
 }
+
+export default SuccessToast;
