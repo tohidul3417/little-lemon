@@ -16,7 +16,7 @@ import { fetchAPI, submitAPI } from "../utils/api";
 import { ACTIONS, initialState, reservationReducer } from "../store/reservationStore";
 import { reservationSchema } from "../schemas/reservationSchema";
 import { SuccessToast } from "../components/resrvations/SuccessToast";
-import "../styles/reservations.css";
+import "../styles/Reservations.css";
 
 
 function Reservations() {
