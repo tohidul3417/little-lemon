@@ -44,7 +44,7 @@ function Testimonials() {
       setActiveIndex((current) => 
         current === testimonials.length - 1 ? 0 : current + 1
       );
-    }, 5000); // Change testimonial every 5 seconds
+    }, 3000); // Change testimonial every 5 seconds
 
     return () => clearInterval(interval);
   }, [isAutoPlay]);

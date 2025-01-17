@@ -11,7 +11,7 @@
   }
   
   .reservations-hero h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
   }
   
