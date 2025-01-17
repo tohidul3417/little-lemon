@@ -78,13 +78,13 @@ function Footer() {
         {/* Social Media & Newsletter */}
         <div className="footer-bottom">
           <div className="social-links">
-            <a href="https://instagram.com/littlelemon" aria-label="Instagram">
+            <a href="https://instagram.com" aria-label="Instagram">
               Instagram
             </a>
-            <a href="https://facebook.com/littlelemon" aria-label="Facebook">
+            <a href="https://facebook.com" aria-label="Facebook">
               Facebook
             </a>
-            <a href="https://twitter.com/littlelemon" aria-label="Twitter">
+            <a href="https://twitter.com" aria-label="Twitter">
               Twitter
             </a>
           </div>
