@@ -68,7 +68,7 @@ function Menu() {
   ];
 
   return (
-    <main>
+    <main className="menu">
       <section className="menu-hero">
         <div className="container">
           <h1>Our Menu</h1>
