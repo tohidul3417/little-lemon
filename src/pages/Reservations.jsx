@@ -18,7 +18,6 @@ import { reservationSchema } from "../schemas/reservationSchema";
 import SuccessToast from "../components/reservations/SuccessToast";
 import "../styles/Reservations.css";
 
-
 function Reservations() {
   const [state, dispatch] = useReducer(reservationReducer, initialState, () => {
     const savedState = localStorage.getItem("reservationState");
@@ -55,34 +54,34 @@ function Reservations() {
   }, [state]);
 
   // Cleanup old reservations
-  const cleanupOldReservations = () => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    const updatedReservedSlots = Object.entries(state.reservedSlots).reduce(
-      (acc, [date, times]) => {
-        if (new Date(date) >= today) {
-          acc[date] = times;
-        }
-        return acc;
-      },
-      {}
-    );
-
-    if (
-      Object.keys(updatedReservedSlots).length !==
-      Object.keys(state.reservedSlots).length
-    ) {
-      dispatch({
-        type: ACTIONS.UPDATE_RESERVED_SLOTS,
-        payload: updatedReservedSlots,
-      });
-    }
-  };
-
   useEffect(() => {
+    const cleanupOldReservations = () => {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const updatedReservedSlots = Object.entries(state.reservedSlots).reduce(
+        (acc, [date, times]) => {
+          if (new Date(date) >= today) {
+            acc[date] = times;
+          }
+          return acc;
+        },
+        {}
+      );
+
+      if (
+        Object.keys(updatedReservedSlots).length !==
+        Object.keys(state.reservedSlots).length
+      ) {
+        dispatch({
+          type: ACTIONS.UPDATE_RESERVED_SLOTS,
+          payload: updatedReservedSlots,
+        });
+      }
+    };
+
     cleanupOldReservations();
-  }, []);
+  }, [state.reservedSlots, dispatch]);
 
   useEffect(() => {
     if (selectedDate) {
@@ -173,7 +172,6 @@ function Reservations() {
   return (
     <main className="reservations-page">
       <Toaster />
-
       <section className="reservations-hero">
         <div className="container">
           <h1>Reserve a Table</h1>
@@ -300,7 +298,6 @@ function Reservations() {
                 Make Another Reservation
               </button>
             </div>
-      
           ) : (
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -368,9 +365,7 @@ function Reservations() {
                     ))}
                   </select>
                   {errors.guests && (
-                    <span className="error-message">
-                      {errors.guests.message}
-                    </span>
+                    <span className="error-message">{errors.guests.message}</span>
                   )}
                 </div>
 
@@ -393,9 +388,7 @@ function Reservations() {
                     <option value="outdoor">Outdoor</option>
                   </select>
                   {errors.seating && (
-                    <span className="error-message">
-                      {errors.seating.message}
-                    </span>
+                    <span className="error-message">{errors.seating.message}</span>
                   )}
                 </div>
               </div>
@@ -413,9 +406,7 @@ function Reservations() {
                   <label htmlFor="email">Email*</label>
                   <input type="email" id="email" {...register("email")} />
                   {errors.email && (
-                    <span className="error-message">
-                      {errors.email.message}
-                    </span>
+                    <span className="error-message">{errors.email.message}</span>
                   )}
                 </div>
 
@@ -423,9 +414,7 @@ function Reservations() {
                   <label htmlFor="phone">Phone Number*</label>
                   <input type="tel" id="phone" {...register("phone")} />
                   {errors.phone && (
-                    <span className="error-message">
-                      {errors.phone.message}
-                    </span>
+                    <span className="error-message">{errors.phone.message}</span>
                   )}
                 </div>
               </div>
