@@ -30,7 +30,7 @@ function Specials() {
       <div className="container">
         <div className="specials-header">
           <h2>This week's specials!</h2>
-          <Link to="/menu" className="btn btn-primary">Online Menu</Link>
+          <Link to="/menu" className="btn btn-primary" id="cyber-yellow-background-button4">Online Menu</Link>
         </div>
         <div className="specials-grid">
           {specialMenuItems.map((item, index) => (

@@ -294,6 +294,7 @@ function Reservations() {
               <button
                 className="btn btn-primary"
                 onClick={() => dispatch({ type: ACTIONS.RESET })}
+                id="cyber-yellow-background-button2"
               >
                 Make Another Reservation
               </button>
@@ -435,6 +436,7 @@ function Reservations() {
               <button
                 type="submit"
                 className="btn btn-primary"
+                id="cyber-yellow-background-button3"
                 disabled={state.isSubmitting}
               >
                 {state.isSubmitting ? "Submitting..." : "Reserve Table"}

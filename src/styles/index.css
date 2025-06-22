@@ -46,3 +46,16 @@ body {
   background-color: #e5c113;
   transform: translateY(-2px);
 }
+
+#cyber-yellow-color {
+  color: #f4ce14
+}
+
+#cyber-yellow-background-button1, #cyber-yellow-background-button2, #cyber-yellow-background-button3, #cyber-yellow-background-button4 {
+  background-color: #F4CE14;
+}
+
+#cyber-yellow-background-button1:hover, #cyber-yellow-background-button2:hover, #cyber-yellow-background-button3:hover, #cyber-yellow-background-button4:hover {
+  background-color: #e5c113;
+  transform: translateY(-2px);
+}
